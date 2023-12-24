@@ -16,10 +16,10 @@ var Product = mongoose.model("Product", productSchema);
 
 function validateProduct(data) {
     const scheme = Joi.object({
-        title: Joi.string().min(3).max(10).required(),
-        Model: Joi.string().min(1).max(20).required(),
+        title: Joi.string().min(3).max(50).required(),
+        Model: Joi.string().min(1).max(50).required(),
         price: Joi.number().min(0).required(),
-        slug: Joi.string().required()
+        slug: Joi.string()
     });
     return scheme.validate(data);
 };
