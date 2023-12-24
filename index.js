@@ -99,7 +99,6 @@ async function handleUpdate(element) {
     openEditForm();
 }
 
-
 function submitEditForm() {
     let id = document.getElementById('editForm').getAttribute('data-id');
     let title = document.getElementById('editTitle').value;

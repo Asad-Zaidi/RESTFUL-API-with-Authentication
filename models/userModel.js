@@ -12,6 +12,7 @@ const userSchema = new mongoose.Schema({
         default: "user",
     }
 });
+
 // Validation
 userSchema.methods.generateHashPassword = async function(){
     let salt = await bcrypt.genSalt(10);
