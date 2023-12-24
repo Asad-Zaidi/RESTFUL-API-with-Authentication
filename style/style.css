@@ -87,7 +87,8 @@ h2 {
 
 .product:hover {
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
-    zoom: 1.009;
+    transform: scale(1.01);
+    transition: all .3s ease-in-out;
     color: #fff;
     background-color: #a8a8a8;
 }

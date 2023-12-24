@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", fetchProducts);
-// let API_URL = "http://localhost:3000/api/products";
+let API_URL = "http://localhost:3000/api/products";
 // let API_URL = "mongodb+srv://asad:1410@cluster0.wrbiuck.mongodb.net/test";
-let API_URL = "https://restful-api-mongo-db.vercel.app/api/products";
+// let API_URL = "https://restful-api-mongo-db.vercel.app/api/products";
 
 async function fetchProducts() {
     try {

@@ -1,3 +1,4 @@
 {
-    "db":"mongodb+srv://asad:1410@cluster0.wrbiuck.mongodb.net/Products"
+    "db":"mongodb+srv://asad:1410@cluster0.wrbiuck.mongodb.net/Products",
+    "jwtPrivateKey": "somePrivateKey"
 }

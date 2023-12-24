@@ -1,12 +1,15 @@
 const express = require("express");
 let router = express.Router();
-const validateProduct = require("../../middleware/validateProduct")
+const validateProduct = require("../../middleware/validateProduct");
+const auth = require("../../middleware/auth");
+const admin = require("../../middleware/admin");
 var { Product } = require("../../models/productModel");
 var cors = require("cors");
 const { validate } = require("@hapi/joi/lib/base");
 router.use(cors());
+
 router.get("/", async (req, res) => {
-    // console.log(req.query);
+    console.log(req.user);
     let page = req.query.page ? req.query.page : 1;
     let perPage = req.query.perPage ? req.query.perPage : 10;
     let skip = ((page - 1) * perPage);
@@ -35,12 +38,12 @@ router.put("/:id", validateProduct, async (req, res) => {
     return res.send(product);
 });
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', auth, admin, async (req, res) => {
     let product = await Product.findByIdAndDelete(req.params.id);
     return res.send(product);
 });
 
-router.post("/", validateProduct, async (req, res) => {
+router.post("/",auth, validateProduct, async (req, res) => {
     let product = new Product();
     product.title = req.body.title;
     product.Model = req.body.Model;
