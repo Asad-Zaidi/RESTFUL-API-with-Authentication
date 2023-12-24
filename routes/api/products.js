@@ -8,7 +8,7 @@ var cors = require("cors");
 const { validate } = require("@hapi/joi/lib/base");
 router.use(cors());
 
-router.get("/", async (req, res) => {
+router.get("/",auth, async (req, res) => {
     console.log(req.user);
     let page = req.query.page ? req.query.page : 1;
     let perPage = req.query.perPage ? req.query.perPage : 10;
@@ -17,7 +17,7 @@ router.get("/", async (req, res) => {
     return res.send(products);
 });
 
-router.get("/:id", async (req, res) => {
+router.get("/:id",auth, async (req, res) => {
     try {
         let product = await Product.findById(req.params.id);
         if (!product)
@@ -29,7 +29,7 @@ router.get("/:id", async (req, res) => {
     }
 });
 
-router.put("/:id", validateProduct, async (req, res) => {
+router.put("/:id",auth, validateProduct, async (req, res) => {
     let product = await Product.findById(req.params.id);
     product.title = req.body.title;
     product.Model = req.body.Model;
@@ -38,7 +38,7 @@ router.put("/:id", validateProduct, async (req, res) => {
     return res.send(product);
 });
 
-router.delete('/:id', auth, admin, async (req, res) => {
+router.delete('/:id', auth, async (req, res) => {
     let product = await Product.findByIdAndDelete(req.params.id);
     return res.send(product);
 });

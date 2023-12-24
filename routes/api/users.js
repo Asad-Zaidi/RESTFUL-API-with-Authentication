@@ -27,23 +27,29 @@ router.post("/register", async (req, res) => {
 });
 
 router.post("/login", async (req, res) => {
-  let user = await User.findOne({ email: req.body.email });
-  if (!user) return res.status(400).send("Invalid Email or Password...!!!");
-  const validPassword = await bcrypt.compare(req.body.password, user.password);
-  if (!validPassword)
-    return res.status(401).send("Invalid Email or Password...!!!");
+  try {
+    let user = await User.findOne({ email: req.body.email });
+    if (!user) return res.status(400).send("Invalid Email or Password...!!!");
+    const validPassword = await bcrypt.compare(req.body.password, user.password);
+    if (!validPassword)
+      return res.status(401).send("Invalid Email or Password...!!!");
 
-  const token = jwt.sign(
-    {
-      _id: user._id,
-      name: user.name,
-    },
-    config.get("jwtPrivateKey")
-  );
-  res.send(token);
-  res.header("x-auth-token", token);
+    const token = jwt.sign(
+      {
+        _id: user._id,
+        name: user.name,
+      },
+      config.get("jwtPrivateKey")
+    );
+    res.send(token);
+    res.header("x-auth-token", token);
 
-  // return res.send(_.pick(user, ["name", "email"]));
+    // return res.send(_.pick(user, ["name", "email"]));
+  }
+  catch (error) {
+    console.error('Error in login route:', error);
+    res.status(500).send('Internal Server Error');
+  }
 });
 
 function validateRegister() {

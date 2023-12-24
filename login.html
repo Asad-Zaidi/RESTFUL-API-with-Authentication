@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/login.css">
+
+</head>
+
+<body>
+    <section>
+        <div class="login-box">
+            <form action="" id="login-form">
+                <h2>Login</h2>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" id="login-email" required title="email">
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <input type="password" id="login-password" required title="password">
+                    <label>Password</label>
+                    <span class="icon" id="show-icon" onclick="toggleLoginPasswordVisibility()">
+                        <ion-icon name="eye"></ion-icon>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">Remember Me</label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <button type="submit" onclick="login()">Login</button>
+                <div class="register-link">
+                    <p>Don't have an account? <a href="#" id="show-register">Register</a></p>
+                </div>
+            </form>
+
+            <form id="register-form">
+                <h2>Register</h2>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                    <input type="text" id="name" required title="name">
+                    <label>Name</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" id="email" required title="email">
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"></span>
+                    <input type="password" id="password" required title="password">
+                    <label>Password</label>
+                    <span class="icon" id="show-password-icon" onclick="togglePasswordVisibility()">
+                        <ion-icon name="eye"></ion-icon>
+                    </span>
+                </div>
+                <button type="submit">Register</button>
+                <div class="register-link">
+                    <p>Already have an account? <a href="#" id="show-login"">Login</a></p>
+                </div>
+            </form>
+
+        </div>
+    </section>
+
+    <script src=" ./script/login.js"></script>
+                            <script type="module"
+                                src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+                            <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
