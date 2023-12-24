@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Management</title>
+
+    <link rel="stylesheet" href="./Front-End/style.css">
+    <link rel="shortcut icon" href="./public/images/favicon.png" type="image/x-icon">
+
+</head>
+
+<body>
+
+    <div class="checkbox-wrapper-54">
+        <label class="switch">
+            <input onclick="myFunction()" type="checkbox">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+    <h1>Product Management</h1>
+
+    <div class="input-box">
+        <h2>Add New Product</h2>
+        <!-- <h2>نئی مصنوعات شامل کریں۔</h2> -->
+
+        <label for="title">Title:</label>
+        <input type="text" id="title" placeholder="Enter Name of the Product..." spellcheck required>
+        <br>
+        <label for="model">Model:</label>
+        <input type="text" id="model" placeholder="Enter Model..." spellcheck required>
+        <br>
+        <label for="price">Price:</label>
+        <input type="number" id="price" placeholder="Enter Price for the Product">
+        <br>
+        <button class="submit-button" onclick="addProduct()">Add Product</button>
+    </div>
+
+    <div id="products">
+
+    </div>
+
+    <div id="editForm" class="edit-form input-box" data-id="">
+        <h2>Edit Product</h2>
+        <label for="editTitle">Title:</label>
+        <input type="text" id="editTitle" required>
+        <label for="editModel">Model:</label>
+        <input type="text" id="editModel" required>
+        <label for="editPrice">Price:</label>
+        <input type="text" id="editPrice" required>
+        <button onclick="submitEditForm()" class="save-btn">Save</button>
+        <button onclick="closeEditForm()" class="cancel-btn">Cancel</button>
+    </div>
+
+    <script src="./index.js"></script>
+
+    </body>
+
+</html>

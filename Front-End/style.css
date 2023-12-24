@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap');
+
+@font-face {
+    font-family: 'Jameel Noori Nastaleeq';
+    src: url('https://www.fontsaddict.com/fontface/jameel-noori-nastaleeq.ttf');
+}
+
+body {
+    font-family: Arial, sans-serif;
+    /* font-family: Jameel Noori Nastaleeq; */
+    margin: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(217, 205, 248);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 36px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+    text-shadow: 0 0 29px #b2f379, 0 0 15px #ffc800;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, #FF5EDF 0%, #04C8DE 100%);
+    background: linear-gradient(89deg, #FF5EDF 0%, #04C8DE 100%);
+    padding: 10px 10px;
+    width: 100%;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    /* font-family: Jameel Noori Nastaleeq; */
+    font-size: 30px;
+}
+
+.input-box {
+    background: linear-gradient(to right, #ff8c00, #ff4500);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    display: inline-block;
+    width: 25%;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.input-box input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 11px;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+}
+
+.input-box label {
+    display: block;
+    margin: 8px 0px 5px;
+}
+
+.input-box button::before {
+    margin-top: 10px;
+    background-color: #4CAF50;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product {
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    margin: 10px;
+    padding: 10px;
+    width: 375px;
+    background-color: #b2b2b2;
+}
+
+.product:hover {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    zoom: 1.009;
+    color: #fff;
+    background-color: #a8a8a8;
+}
+
+button {
+    --color: #0077ff;
+    font-family: inherit;
+    display: inline-block;
+    padding: 8px 12px;
+    overflow: hidden;
+    margin: 0.5vh 0.5vh 0 0;
+    font-size: 16px;
+    z-index: 1;
+    color: var(--color);
+    border: 2px solid var(--color);
+    border-radius: 6px;
+    position: relative;
+}
+
+button::before {
+    position: absolute;
+    content: "";
+    background: var(--color);
+    width: 150px;
+    height: 200px;
+    z-index: -1;
+    border-radius: 50%;
+}
+
+button:hover {
+    color: white;
+}
+
+button:before {
+    top: 100%;
+    left: 100%;
+    transition: .3s all;
+}
+
+button:hover::before {
+    top: -30px;
+    left: -30px;
+}
+
+
+.edit-form {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    border: 1px solid black;
+    border-radius: 10px;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(to right, #ff8c00, #ff4500);
+    color: white;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+}
+
+.edit-form button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+    /* Add some margin for spacing */
+}
+
+.edit-form button.cancel-btn {
+    background-color: #ccc;
+    color: rgb(0, 0, 0);
+    border: 2px solid #fff;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.edit-form button.save-btn {
+    background-color: #ccc;
+    color: rgb(0, 0, 0);
+    border: 2px solid #fff;
+    padding: 8px 12px;
+    cursor: pointer;
+    margin-left: 25%;
+}
+
+
+.checkbox-wrapper-54 input[type="checkbox"] {
+    visibility: hidden;
+    display: none;
+}
+
+.checkbox-wrapper-54 *,
+.checkbox-wrapper-54 ::after,
+.checkbox-wrapper-54 ::before {
+    box-sizing: border-box;
+}
+
+/* The switch - the box around the slider */
+.checkbox-wrapper-54 .switch {
+    --width-of-switch: 3.5em;
+    --height-of-switch: 2em;
+    /* size of sliding icon -- sun and moon */
+    --size-of-icon: 1.4em;
+    /* it is like a inline-padding of switch */
+    --slider-offset: 0.3em;
+    position: relative;
+    width: var(--width-of-switch);
+    height: var(--height-of-switch);
+    display: inline-block;
+}
+
+/* The slider */
+.checkbox-wrapper-54 .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f4f4f5;
+    transition: .4s;
+    border-radius: 30px;
+}
+
+.checkbox-wrapper-54 .slider:before {
+    position: absolute;
+    content: "";
+    height: var(--size-of-icon, 1.4em);
+    width: var(--size-of-icon, 1.4em);
+    border-radius: 20px;
+    left: var(--slider-offset, 0.3em);
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(40deg, #ff0080, #ff8c00 70%);
+    transition: .4s;
+}
+
+.checkbox-wrapper-54 input:checked+.slider {
+    background-color: #303136;
+}
+
+.checkbox-wrapper-54 input:checked+.slider:before {
+    left: calc(100% - (var(--size-of-icon, 1.4em) + var(--slider-offset, 0.3em)));
+    background: #303136;
+    box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
+}
+
+/* Add the following rules to change color mode */
+.checkbox-wrapper-54 input:checked~body {
+    background-color: #303136;
+    color: #ffffff;
+    /* Change text color to light color */
+}
+
+.checkbox-wrapper-54 input:not(:checked)~body {
+    background-color: #ffffff;
+    color: #303136;
+    /* Change text color to dark color */
+}
